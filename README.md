@@ -1,4 +1,4 @@
-# async-pipe
+# promised-pipe
 A sweet composition of [ramda.pipe](http://ramdajs.com/0.21.0/docs/#pipe) and [q.promised](https://github.com/kriskowal/q/wiki/API-Reference#qpromisedfunc) to make async pipes simple
 
 ## Introduction
@@ -9,15 +9,15 @@ but struggle with composing both *synchronous* and *asynchronous* functions in t
 
 ## Install
 
-Run: `npm i --save async-pipe`
+Run: `npm i --save promised-pipe`
 
-Include: `const pipe = require('async-pipe')`
+Include: `const pipe = require('promised-pipe')`
 
 ## Usage
 
 The exported file is a function with the same API as `ramda.pipe`, except the created function will always return a `Promise`
 
-Here's how it works (see [test.js](https://github.com/flashhhh/async-pipe/blob/master/test.js))
+Here's how it works (see [test.js](https://github.com/flashhhh/promised-pipe/blob/master/test.js))
 
     test('works with a mix of functions', function(t) {
         return pipe(

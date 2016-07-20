@@ -1,5 +1,5 @@
 {
-  "name": "async-pipe",
+  "name": "promised-pipe",
   "version": "1.0.0",
   "description": "Simple async pipe function to mix pure and promise-based functions easily",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/flashhhh/async-pipe.git"
+    "url": "git+https://github.com/flashhhh/promised-pipe.git"
   },
   "keywords": [
     "pipe",
@@ -20,9 +20,9 @@
   "author": "Kirill Rogovoy <kirill@rogovoy.me>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/flashhhh/async-pipe/issues"
+    "url": "https://github.com/flashhhh/promised-pipe/issues"
   },
-  "homepage": "https://github.com/flashhhh/async-pipe#readme",
+  "homepage": "https://github.com/flashhhh/promised-pipe#readme",
   "dependencies": {
     "q": "^1.4.1",
     "ramda": "^0.21.0"
