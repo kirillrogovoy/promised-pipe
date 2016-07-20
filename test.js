@@ -12,7 +12,7 @@ test('works with a mix of functions', function(t) {
     return pipe(
         function (x) { return x + 1 }, // sync
         asyncAbs, // async
-        function (x) { return x - 1 } // async
+        function (x) { return x - 1 } // sync
     )(-3).then(function (value) {
         t.equals(value, 1)
         return value
