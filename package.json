@@ -1,0 +1,33 @@
+{
+  "name": "async-pipe",
+  "version": "1.0.0",
+  "description": "Simple async pipe function to mix pure and promise-based functions easily",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flashhhh/async-pipe.git"
+  },
+  "keywords": [
+    "pipe",
+    "async",
+    "promise",
+    "fp",
+    "composition"
+  ],
+  "author": "Kirill Rogovoy <kirill@rogovoy.me>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flashhhh/async-pipe/issues"
+  },
+  "homepage": "https://github.com/flashhhh/async-pipe#readme",
+  "dependencies": {
+    "q": "^1.4.1",
+    "ramda": "^0.21.0"
+  },
+  "devDependencies": {
+    "blue-tape": "^0.2.0"
+  }
+}
