@@ -1,4 +1,7 @@
 # promised-pipe
+
+[![npm version](https://badge.fury.io/js/promised-pipe.svg)](https://badge.fury.io/js/promised-pipe)
+
 A sweet composition of [ramda.pipe](http://ramdajs.com/0.21.0/docs/#pipe) and [q.promised](https://github.com/kriskowal/q/wiki/API-Reference#qpromisedfunc) to make async pipes simple
 
 ## Introduction
