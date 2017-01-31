@@ -23,10 +23,6 @@
     "url": "https://github.com/flashhhh/promised-pipe/issues"
   },
   "homepage": "https://github.com/flashhhh/promised-pipe#readme",
-  "dependencies": {
-    "q": "^1.4.1",
-    "ramda": "^0.21.0"
-  },
   "devDependencies": {
     "blue-tape": "^0.2.0"
   }
