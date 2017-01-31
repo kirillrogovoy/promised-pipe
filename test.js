@@ -8,6 +8,21 @@ test('works with a sync function', function(t) {
     })
 })
 
+test('works with multiple arguments', function(t) {
+    return pipe(Math.pow)(2, 3).then(function (value) {
+        t.equals(value, 8)
+        return value
+    })
+})
+
+test('works with an array as an input', function(t) {
+    const sum = numbers => numbers.reduce((acc, cur) => acc + cur, 0)
+    return pipe(sum)([1, 5, 9]).then(function (value) {
+        t.equals(value, 15)
+        return value
+    })
+})
+
 test('works with a mix of functions', function(t) {
     return pipe(
         function (x) { return x + 1 }, // sync
@@ -33,6 +48,13 @@ test('fails when there is a rejection inside the chain', function(t) {
         function () { return Promise.reject(Error('test'))  },
         function (x) { return console.log('I should not be called') }
     )(-3), Error)
+})
+
+test('fails when no arguments supplied', function(t) {
+    t.throws(function() {
+        pipe()
+    }, 'pipe requires at least one argument')
+    t.end()
 })
 
 function asyncAbs(x) {
