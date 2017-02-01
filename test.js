@@ -1,5 +1,6 @@
-var test = require('blue-tape')
-var pipe = require('./index.js')
+const test = require('blue-tape')
+const path = require('path')
+const pipe = require(path.join(__dirname, process.env.PROMISED_PIPE_LIB_FILE || 'index.js'))
 
 test('works with a sync function', t => {
     return pipe(Math.abs)(-3).then(value => {
