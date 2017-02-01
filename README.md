@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/promised-pipe.svg)](https://badge.fury.io/js/promised-pipe)
 [![Build Status](https://travis-ci.org/kirillrogovoy/promised-pipe.svg?branch=master)](https://travis-ci.org/kirillrogovoy/promised-pipe)
 
-<img src="https://cdn.rawgit.com/kirillrogovoy/promised-pipe/master/logo.svg" alt="Logo" width="300px"/>
+<img src="https://cdn.rawgit.com/kirillrogovoy/promised-pipe/fc639543/logo.svg" alt="Logo" width="300px"/>
 
 A sweet composition of [ramda.pipe](http://ramdajs.com/0.21.0/docs/#pipe) and [q.promised](https://github.com/kriskowal/q/wiki/API-Reference#qpromisedfunc) to make async pipes simple. No dependencies. Extremely lightweight.
 
