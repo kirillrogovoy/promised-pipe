@@ -5,7 +5,7 @@
 
 <img src="https://cdn.rawgit.com/kirillrogovoy/promised-pipe/fc639543/logo.svg" alt="Logo" width="300px"/>
 
-A sweet composition of [ramda.pipe](http://ramdajs.com/0.21.0/docs/#pipe) and [q.promised](https://github.com/kriskowal/q/wiki/API-Reference#qpromisedfunc) to make async pipes simple. No dependencies. Extremely lightweight.
+A sweet composition of [ramda.pipe](http://ramdajs.com/0.21.0/docs/#pipe) and [q.promised](https://github.com/kriskowal/q/wiki/API-Reference#qpromisedfunc) to make async pipes simple. No dependencies. Extremely lightweight. Fully tested.
 
 ## Requirements
 
