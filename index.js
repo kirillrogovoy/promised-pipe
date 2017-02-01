@@ -6,6 +6,12 @@ function promisedPipe(...fns) {
         throw Error('pipe requires at least one argument')
     }
 
+    fns.forEach((fn, i) => {
+        if (typeof fn !== 'function') {
+            throw Error(`pipe requires each argument to be a function. Argument #${i+1} is of type "${typeof fn}"`)
+        }
+    })
+
     /*
      * Does the same as q.promised
      * https://github.com/kriskowal/q/wiki/API-Reference#qpromisedfunc

@@ -58,5 +58,12 @@ test('fails when no arguments supplied', t => {
     t.end()
 })
 
+test('fails when an argument is not a function', t => {
+    t.throws(() => {
+        pipe('not a function')
+    }, 'pipe requires each argument to be a function. Argument #1 is of type "string"')
+    t.end()
+})
+
 const asyncAbs = x => Promise.resolve(Math.abs(x))
 
