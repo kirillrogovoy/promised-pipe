@@ -3,3 +3,8 @@ node_js:
   - "4"
   - "6"
   - "7"
+env:
+  - PROMISED_PIPE_LIB_FILE=index.dist.js
+install:
+  - npm install
+  - npm run build
