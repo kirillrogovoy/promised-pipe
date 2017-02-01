@@ -42,8 +42,7 @@ There is a bunch of tests in [test.js](./test.js) which are quite readable
 
 ## Examples
 
-You can play and run all of these examples by `node example.js` (Node 6+ required).
-Note that Ramda is an optional dependency and won't get installed when using `npm i promised-pipe`
+You can play and run all of these examples by `npm i ramda && node example.js` (Node 6+ required).
 
 Basic example with some simple math:
 ```js
