@@ -1,6 +1,6 @@
 {
   "name": "promised-pipe",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Simple async pipe function to mix pure and promise-based functions easily",
   "main": "index.dist.js",
   "scripts": {
