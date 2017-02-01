@@ -36,7 +36,7 @@ const resultedFn = pipe(fn1, fn2, fn3)
 resultedFn(args) // => Promise
 ```
 
-There is a bunch of tests in [test.js](./test.js)
+There is a bunch of tests in [test.js](./test.js) which are quite readable
 
 ## Examples
 
@@ -58,7 +58,7 @@ const mathFn = pipe(
 mathFn(5).then(console.log) // 5 + 1 / 2 * 3 = 9
 ```
 
-Example with fs:
+Numbers aren't so interesting! Example with fs:
 ```js
 const filePath = '/tmp/promised_pipe_example'
 // "Promisify" fs modules
@@ -95,3 +95,14 @@ ramdaFsFn('hello, ramda').then(console.log) // HELLO, RAMDA
 ```
 
 So you can easily mix functions which return non-promises and functions which return promises.
+
+It is highly recommended to use it with Ramda since it will make your experience a lot better.
+
+## More on the topic
+
+- [Ramda](http://ramdajs.com)
+  - [Hands-on Functional Programming with Ramda.js](https://www.sitepoint.com/functional-programming-with-ramda/)
+  - [Hey Underscore, You're Doing It Wrong!](https://www.youtube.com/watch?v=m3svKOdZijA)
+- Promises
+    - [MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+    - https://www.promisejs.org
