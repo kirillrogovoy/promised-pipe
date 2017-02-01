@@ -2,7 +2,7 @@
   "name": "promised-pipe",
   "version": "1.0.1",
   "description": "Simple async pipe function to mix pure and promise-based functions easily",
-  "main": "index.js",
+  "main": "index.dist.js",
   "scripts": {
     "test": "node ./test.js",
     "build": "babel --presets es2015 index.js -o index.dist.js"
