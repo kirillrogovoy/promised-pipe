@@ -36,7 +36,7 @@ const resultedFn = pipe(fn1, fn2, fn3)
 resultedFn(args) // => Promise
 ```
 
-There is a bunch of tests in [test.js](https://github.com/flashhhh/promised-pipe/blob/master/test.js)
+There is a bunch of tests in [test.js](./test.js)
 
 ## Examples
 
