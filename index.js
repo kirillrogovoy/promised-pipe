@@ -1,35 +1,23 @@
 // Public intefrace
 module.exports = promisedPipe
 
+const ensureFunctionType = (fn, i) => {
+    if (typeof fn !== 'function') {
+        throw Error(`pipe requires each argument to be a function. Argument #${i+1} is of type "${typeof fn}"`)
+    }
+}
+
+const chain = (q, fn) => q.then(fn)
+
 function promisedPipe(...fns) {
     if (fns.length < 1) {
         throw Error('pipe requires at least one argument')
     }
 
-    fns.forEach((fn, i) => {
-        if (typeof fn !== 'function') {
-            throw Error(`pipe requires each argument to be a function. Argument #${i+1} is of type "${typeof fn}"`)
-        }
-    })
+    fns.forEach(ensureFunctionType)
 
-    /*
-     * Does the same as q.promised
-     * https://github.com/kriskowal/q/wiki/API-Reference#qpromisedfunc
-     *
-     * Creates a new version of func that accepts any combination of promise and non-promise
-     * values, converting them to their fulfillment values before calling the original func.
-     * The returned version also always returns a promise: if func does a return or throw,
-     * then Q.promised(func) will return fulfilled or rejected promise, respectively.
-     *
-     */
-    const promised = fn => (...args) => Promise.all(args).then(_args => fn.apply(null, _args))
+    // shift out the 1st function for multiple arguments
+    const start = fns.shift()
 
-    /*
-     * Does the same as Ramda.pipe
-     * http://ramdajs.com/docs/#pipe
-     *
-     * Performs left-to-right function composition. The leftmost function may have any arity;
-     * the remaining functions must be unary.
-     */
-    return (...args) => fns.map(promised).reduce((acc, cur) => [cur.apply(null, acc)], args)[0]
+    return (...args) => fns.reduce(chain, Promise.resolve(start(...args)))
 }
