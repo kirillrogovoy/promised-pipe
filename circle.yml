@@ -1,0 +1,3 @@
+machine:
+  environment:
+    PROMISED_PIPE_LIB_FILE: index.dist.js
