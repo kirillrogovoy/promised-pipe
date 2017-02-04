@@ -7,12 +7,12 @@ const PIPE_SIZE = 1e3
 const inc = x => x + 1
 const fns = Array(PIPE_SIZE).fill(inc)
 const formatTime = x => prettyTime(x, { precise: true })
-let t1
+var t1
 
 // creation
 t1 = process.hrtime()
 
-for (let i = 0; i < 1e4 * 2; i++) {
+for (var i = 0; i < 1e4 * 2; i++) {
     pipe.apply(null, fns)
 }
 
@@ -22,7 +22,7 @@ console.log('creation:', formatTime(process.hrtime(t1)))
 t1 = process.hrtime()
 
 const fn = pipe.apply(null, fns)
-for (let i = 0; i < 1e2 * 2; i++) {
+for (var i = 0; i < 1e2 * 2; i++) {
     fn(1)
 }
 
