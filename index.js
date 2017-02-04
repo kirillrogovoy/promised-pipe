@@ -18,11 +18,5 @@ function promisedPipe(...fns) {
     // shift out the 1st function for multiple arguments
     const start = fns.shift()
 
-    return (...args) => {
-        try {
-            return fns.reduce(chain, Promise.resolve(start(...args)))
-        } catch (err) {
-            return Promise.reject(err)
-        }
-    }
+    return (...args) => fns.reduce(chain, new Promise(res => res(start(...args))))
 }
