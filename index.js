@@ -1,12 +1,6 @@
 // Public intefrace
 module.exports = promisedPipe
 
-const ensureFunctionType = (fn, i) => {
-    if (typeof fn !== 'function') {
-        throw Error(`pipe requires each argument to be a function. Argument #${i+1} is of type "${typeof fn}"`)
-    }
-}
-
 const chain = (q, fn) => q.then(fn)
 
 function promisedPipe(...fns) {
@@ -14,10 +8,21 @@ function promisedPipe(...fns) {
         throw Error('pipe requires at least one argument')
     }
 
-    fns.forEach(ensureFunctionType)
+    let i = -1
+    while (++i < fns.length) {
+        if (typeof fns[i] !== 'function') {
+            throw Error(`pipe requires each argument to be a function. Argument #${i+1} is of type "${typeof fns[i]}"`)
+        }
+    }
 
     // shift out the 1st function for multiple arguments
     const start = fns.shift()
 
-    return (...args) => fns.reduce(chain, Promise.resolve(start(...args)))
+    return (...args) => {
+        try {
+            return fns.reduce(chain, Promise.resolve(start(...args)))
+        } catch (err) {
+            return Promise.reject(err)
+        }
+    }
 }
