@@ -43,12 +43,24 @@ test('fails when there is an error inside the chain', t => {
     )(-3), Error)
 })
 
+test('fails when there is an error in the first function', t => {
+    return t.shouldFail(pipe(
+        () => { throw Error('test') }
+    )(), Error)
+})
+
 test('fails when there is a rejection inside the chain', t => {
     return t.shouldFail(pipe(
         x => x + 1,
         () => { return Promise.reject(Error('test'))  },
         x => { return console.log('I should not be called') }
     )(-3), Error)
+})
+
+test('fails when there is a rejection in the first function', t => {
+    return t.shouldFail(pipe(
+        () => { return Promise.reject(Error('test'))  }
+    )(), Error)
 })
 
 test('fails when no arguments supplied', t => {

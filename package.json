@@ -1,12 +1,13 @@
 {
   "name": "promised-pipe",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Simple async pipe function to mix pure and promise-based functions easily",
   "main": "index.dist.js",
   "scripts": {
     "test": "node ./test.js",
     "build": "babel --presets es2015 index.js -o index.dist.js",
-    "prepublish": "npm run build && npm test"
+    "postinstall": "npm run build",
+    "prepublishOnly": "npm test"
   },
   "repository": {
     "type": "git",
