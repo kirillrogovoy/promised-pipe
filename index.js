@@ -8,12 +8,11 @@ function promisedPipe(...fns) {
         throw Error('pipe requires at least one argument')
     }
 
-    let i = -1
-    while (++i < fns.length) {
-        if (typeof fns[i] !== 'function') {
-            throw Error(`pipe requires each argument to be a function. Argument #${i+1} is of type "${typeof fns[i]}"`)
-        }
-    }
+    fns.forEach((fn, i) => {
+        if (typeof fn !== 'function') {
+            throw Error(`pipe requires each argument to be a function. Argument #${i+1} is of type "${typeof fn}"`)
+        }        
+    })
 
     // shift out the 1st function for multiple arguments
     const start = fns.shift()
